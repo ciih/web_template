@@ -1,0 +1,358 @@
+/* module 提供常用css样式
+---------------------------------------------------------*/
+
+/* 各种列表
+ *
+ * 1.普通列表
+ * <ul class="g-list">
+ *     <li></li>
+ *     <li></li>
+ * </ul>
+ *
+ * 2.浮动列表
+ * <ul class="g-list list-fluid">
+ *     <li></li>
+ *     <li></li>
+ * </ul>
+ *
+ * 3.带•列表
+ * <ul class="g-list">
+ *     <li><ins class="disc">•</ins></li>
+ *     <li><ins class="disc">•</ins></li>
+ * </ul>
+ *
+ * 4.带icon列表
+ * <ul class="g-list">
+ *     <li class="icon-video"></li>
+ *     <li class="icon-pic"></li>
+ *     <li class="icon-play"></li>
+ *     <li class="icon-logo"><img src="" /></li>
+ * </ul>
+ *
+ * 5.带|列表
+ * <ul class="g-list">
+ *     <li><ins class="line">|</ins></li>
+ *     <li><ins class="line">|</ins></li>
+ * </ul>
+*/
+
+.g-list{overflow:hidden;*zoom:1;}
+.g-list li{overflow:hidden;height:29px;line-height:29px;white-space:nowrap;}
+.g-list .disc{float:left;overflow:hidden;margin:13px 8px 0 0;vertical-align:top;font-family:Arial;}
+.g-list .square{overflow:hidden;position:absolute;top:12px;left:0;width:3px;height:3px;background-color:#a9a9a9;}
+.g-list a{margin-right:6px;_display:inline-block;}
+.g-list .line{margin-right:6px;color:#e4e4e4;}
+.g-list .info{font-size:12px;color:#ccc;}
+.g-list .icon-logo a{overflow:hidden;position:relative;padding-left:24px;}
+.g-list .icon-logo img{position:absolute;left:0;top:-1px;_top:6px;width:16px;height:16px;}
+.g-list .icon-video,
+.g-list .icon-pic,
+.g-list .icon-play{*display:inline-block;overflow:hidden;padding-right:18px;background-repeat:no-repeat;}
+.g-list .icon-video{
+	background-image:url(http://p1.qhimg.com/t01404e57bd5883d8e9.png);
+	background-position:right 1px;*background-position:right 7px;
+}
+.g-list .icon-pic{
+	background-image:url(http://p1.qhimg.com/t01a2226419ec548e09.png);
+	background-position:right 1px;*background-position:right 7px;
+}
+.g-list .icon-play{
+	background-image:url(http://p1.qhimg.com/t01e0a44477109e846c.png);
+	background-position:right 1px;*background-position:right 7px;
+}
+.has-square li{position:relative;padding-left:11px;}
+
+.list-fluid li{display:inline;float:left;}
+.list-fluid:after{display:block;clear:both;visibility:hidden;height:0;content:'';}
+.list-fluid{zoom:1;}
+
+/* 图文结合
+ *
+ * 模块中应用图文结合必须对g-pic、g-pic a、g-pic mask设置宽和高
+ *
+ * 1.普通图文(套g-pic的可以是任何标签)
+ * <div class="g-pic">
+ *    <a href="">
+ *        <img src="" />
+ *        <em class="txt"></em>
+ *        <span class="txt-bg"></span>
+ *        <span class="mask"></span>
+ *     </a>
+ * </div>
+ *
+ * 2.带icon图文
+ * <div class="g-pic">
+ *    <a href="">
+ *        <img src="" />
+ *        <em class="txt icon"></em>
+ *        <span class="txt-bg"></span>
+ *        <span class="mask"></span>
+ *     </a>
+ * </div>
+ *
+ * 3.无mask图文
+ * <div class="g-pic">
+ *    <a href="">
+ *        <img src="" />
+ *        <em class="txt"></em>
+ *        <span class="txt-bg"></span>
+ *     </a>
+ * </div>
+ *
+ * 3.带figure图文
+ * <div class="g-pic-figure">
+ *     <div class="g-pic">
+ *        <a href="">
+ *            <img src="" />
+ *            <em class="txt"></em>
+ *            <span class="txt-bg"></span>
+ *            <span class="mask"></span>
+ *         </a>
+ *         <div class="figure">
+ *             <a href=""></a>
+ *         </div>
+ *     </div>
+ * </div>
+*/
+
+.g-pic a{overflow:hidden;display:block;position:relative;vertical-align:top;}
+.g-pic a:hover{text-decoration:none;}
+.g-pic a img{width:100%;}
+.g-pic .txt,
+.g-pic .txt-bg,
+.g-pic .mask{position:absolute;left:0;width:100%;height:20px;line-height:20px;text-align:center;color:#fff;}
+.g-pic .txt-bg{z-index:1;bottom:0;background-color:#000;opacity:0.5;filter:alpha(opacity=50);}
+.g-pic .txt{z-index:2;overflow:hidden;bottom:0;}
+.g-pic .mask{z-index:3;top:0;background-color:#fff;opacity:0;filter:Alpha(opacity=0);}
+.g-pic a:hover .mask{opacity:0.1;filter:Alpha(opacity=10);}
+.g-pic .icon-play{
+	padding-right:24px;width:85%;text-indent:8px;text-align:left;
+	background-repeat:no-repeat;background-position:97% 0;
+	background-image:url(http://p1.qhimg.com/t01818c13a0fa2c5c6e.png);
+	_background-image:url( http://p1.qhimg.com/t01abeea7872f88f808.png);
+}
+.g-pic-figure .figure{overflow:hidden;margin-top:5px;width:100%;text-align:center;}
+
+/* 排行榜列表
+ *
+ * <div class="g-ranking">
+ *     <ol>
+ *         <li>
+ *             <span class="ranking-number"></span>
+ *             <span class="ranking-txt"><a href=""></a></span>
+ *             <span class="ranking-up"></span>
+ *         </li>
+ *     </ol>
+ * </div>
+ *
+*/
+
+.g-ranking li{position:relative;margin-bottom:9px;height:20px;line-height:20px;font-family:"\5b8b\4f53";font-size:14px;}
+.g-ranking li{vertical-align:top;} /* li bottom 4px bug */
+.g-ranking .ranking-number{
+	float:left;margin:5px 9px 0 0;*margin:1px 9px 0 0;width:13px;height:13px;line-height:13px;font-size:14px;text-align:center;font-family:Arial;
+	color:#666;
+}
+.g-ranking .top3{color:#fd6c0f;}
+.g-ranking .ranking-txt{overflow:hidden;float:left;height:20px;}
+.g-ranking .ranking-up,
+.g-ranking .ranking-down{
+	position:absolute;top:8px;right:0;width:7px;height:7px;
+	background-image:url(http://p1.qhimg.com/t01e80fc7634a6634de.png);background-repeat:no-repeat;
+}
+.g-ranking .ranking-up{background-position:0 0;}
+.g-ranking .ranking-down{background-position:0 -30px;}
+
+/* 快速搜索
+ *
+ * 必须对快速搜索的位置做定位
+ *
+ * <div class="quick-search">
+ * 	  <div class="search-input">
+ *         <input type="text" /><button class="search-btn">搜索</button>
+ *    </div>
+ * </div>
+ *
+*/
+
+.quick-search{position:absolute;width:150px;height:24px;}
+.quick-search .search-input{overflow:hidden;width:148px;height:22px;white-space:nowrap;border:1px solid #c5c8cd;background-color:#fff;}
+.quick-search .search-input input{display:inline;float:left;margin:3px 7px 0 6px;margin:4px 7px 0 6px\9;width:110px;height:16px;font-size:12px;font-family:Arial;border:0;background:none;outline:0;-webkit-appearance:none;}
+.quick-search .search-btn{
+	overflow:hidden;float:left;width:25px;height:22px;text-indent:-99em;cursor:pointer;
+	color:#fff;border:0;outline:0;
+	background:url(http://p1.qhimg.com/t01dbe36004832423d4.png) no-repeat 5px 4px;
+}
+
+/* 轮播
+ *
+ * 必须对slide-wrap、slide-content设置宽和高
+ * 按钮分两种样式：半透明式(slide-opacity-btn)、实体样式(slide-btn)
+ *
+ * <div class="slide-wrap">
+ *     <div class="slide-content">
+ *         <ul class="items clearfix">
+ *             <li class="slide-section">content</li>
+ *             <li class="slide-section">content</li>
+ *         </ul>
+ *     </div>
+ *     半透明按钮
+ *     <a href="###" class="slide-opacity-btn opacity-prev pre">
+ *         <span class="bg"></span><em class="arrow">&lt;</em>
+ *     </a>
+ *	   <a href="###" class="slide-opacity-btn opacity-next next">
+ *          <span class="bg"></span><em class="arrow">&gt;</em>
+ *     </a>
+ *     实体按钮
+ *     <a href="###" class="slide-btn pre disabled">&lt;</a>
+ *	   <a href="###" class="slide-btn next">&gt;</a>
+ *     文字按钮
+ *     <a href="###" class="slide-txt-btn prev">文字</a>
+ *	   <a href="###" class="slide-txt-btn next">文字</a>
+ *     <div class="slide-pagination">
+ *         <a href="###1" class="active"><ins>1</ins></a>
+ *         <a href="###2"><ins>2</ins></a>
+ *         <a href="###3"><ins>3</ins></a>
+ *         <a href="###4"><ins>4</ins></a>
+ *         <a href="###5"><ins>5</ins></a>
+ *         <a href="###6"><ins>6</ins></a>
+ *     </div>
+ * </div>
+ *
+*/
+
+.slide-wrap{position:relative;}
+.slide-wrap .slide-content{position:relative;overflow:hidden;}
+.slide-wrap .slide-content .slide-section{overflow:hidden;display:inline;float:left;}
+
+.slide-wrap .slide-text{z-index:3;position:absolute;color:#999;}
+.slide-wrap .slide-text em{font-weight:bold;color:#666;}
+
+.slide-wrap .slide-pagination{z-index:3;position:absolute;}
+.slide-wrap .slide-pagination a{
+	overflow:hidden;float:left;width:12px;height:12px;line-height:12px;text-align:center;
+}
+.slide-wrap .slide-pagination a ins{
+	overflow:hidden;display:inline-block;;width:8px;height:8px;
+	background-color:#f6f6f6;
+	-webkit-border-radius:12px;border-radius:12px;
+}
+.slide-wrap .slide-pagination .active ins{background-color:#3ba354;}
+
+/* 半透明按钮 */
+.slide-wrap .slide-opacity-btn{overflow:hidden;display:none;z-index:3;position:absolute;width:20px;height:40px;}
+.slide-wrap .slide-opacity-btn .bg{height:40px;width:22px;z-index:1;position:absolute;top:0;left:0;background:#000;opacity:0.4;filter:Alpha(opacity=40);}
+.slide-wrap .slide-opacity-btn:hover .bg{opacity:0.7;filter:Alpha(opacity=70);}
+.slide-wrap .slide-opacity-btn .arrow{z-index:2;position:absolute;top:11px;height:19px;width:10px;text-indent:-999em;background-image:url(http://p1.qhimg.com/t01091c4d6600879f01.png);background-repeat:no-repeat;}
+.slide-wrap .opacity-prev{left:0;}
+.slide-wrap .opacity-next{right:0;}
+.slide-wrap .opacity-prev .arrow{left:4px;background-position:0 0;}
+.slide-wrap .opacity-next .arrow{left:7px;background-position:-26px 0;}
+
+/* 文字按钮 */
+.slide-wrap .slide-txt-btn{z-index:3;position:absolute;height:17px;line-height:20px;color:#999;}
+.slide-wrap .slide-txt-btn:hover{color:#e60012;}
+
+/* 实体按钮 */
+.slide-wrap .slide-btn{
+	overflow:hidden;display:block;z-index:3;position:absolute;width:19px;height:18px;line-height:20px;text-align:center;
+	font-family:"\5b8b\4f53","\u534e\u6587\u7ec6\u9ed1"; /* Mac default font */
+	color:#3ba354;border:1px solid #d1d1d1;background-color:#fff;
+}
+.slide-wrap .slide-btn:hover,
+.slide-wrap .slide-btn:active{z-index:4;text-decoration:none;color:#3ba354;border-color:#a7a7a7;}
+.slide-wrap .disabled,
+.slide-wrap .disabled:hover{color:#dadada;border-color:#dadada;cursor:default;}
+
+/* 气泡提示
+ *
+ * 设置气泡出现在目标周围的位置：
+ * g-tips-top(目标在气泡之上)    g-tips-right(目标在气泡之左) 
+ * g-tips-bottom(目标在气泡之上) g-tips-left(目标在气泡之右)
+ *
+ * <div class="g-tips g-tips-left">
+ *     <div class="cont">text</div>
+ *     <!--[if lte IE 7]>
+ *     <span class="arrow-border"></span>
+ *     <span class="arrow-background"></span>
+ *     <![endif]-->
+ * </div>
+ *
+*/
+
+.g-tips{
+	display:none;position:absolute;z-index:21;padding:2px 4px;border:1px solid #febe8f;background-color:#fff8d9;
+	-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;
+}
+.g-tips .cont{line-height:18px;font-size:12px;white-space:nowrap;font-family:"\5b8b\4f53";color:#7a7a7a;}
+.g-tips .close{position:absolute;top:3px;line-height:12px;font-size:12px;font-weight:bold;font-family:Arial;cursor:pointer;color:#ddd7b9!important;}
+.g-tips a.close:hover{text-decoration:none;}
+.g-tips-top:before,.g-tips-top:after,.g-tips-top .arrow-border,.g-tips-top .arrow-background{overflow:hidden;position:absolute;left:50%;margin-left:-6px;width:0;height:0;border-width:6px 6px 0;border-style:solid dashed dashed;content:'';}
+.g-tips-top:before,.g-tips-top .arrow-border{bottom:-7px;border-color:#febe8f transparent transparent transparent;}
+.g-tips-top:after,.g-tips-top .arrow-background{bottom:-6px;border-color:#fff8d9 transparent transparent transparent;}
+.g-tips-right:before,.g-tips-right:after,.g-tips-right .arrow-border,.g-tips-right .arrow-background{overflow:hidden;position:absolute;top:50%;margin-top:-6px;width:0;height:0;border-width:6px 6px 6px 0;border-style:dashed solid dashed dashed;content:'';}
+.g-tips-right:before,.g-tips-right .arrow-border{left:-7px;border-color:transparent #febe8f transparent transparent;}
+.g-tips-right:after,.g-tips-right .arrow-background{left:-6px;border-color:transparent #fff8d9 transparent transparent;}
+.g-tips-bottom:before,.g-tips-bottom:after,.g-tips-bottom .arrow-border,.g-tips-bottom .arrow-background{overflow:hidden;position:absolute;left:50%;margin-left:-6px;width:0;height:0;border-width:0 6px 6px;border-style:dashed dashed solid;content:'';}
+.g-tips-bottom:before,.g-tips-bottom .arrow-border{top:-7px;border-color:transparent transparent #febe8f transparent;}
+.g-tips-bottom:after,.g-tips-bottom .arrow-background{top:-6px;border-color:transparent transparent #fff8d9 transparent;}
+.g-tips-left:before,.g-tips-left:after,.g-tips-left .arrow-border,.g-tips-left .arrow-background{overflow:hidden;position:absolute;top:50%;margin-top:-6px;width:0;height:0;border-width:6px 0 6px 6px;border-style:dashed dashed dashed solid;content:'';}
+.g-tips-left:before,.g-tips-left .arrow-border{right:-7px;border-color:transparent transparent transparent #febe8f;}
+.g-tips-left:after,.g-tips-left .arrow-background{right:-6px;border-color:transparent transparent transparent #fff8d9;}
+.g-tips-top .close,
+.g-tips-right .close,
+.g-tips-bottom .close{right:4px;}
+.g-tips-left .close{left:4px;}
+
+/* 箭头
+ *
+ * 必须对箭头g-arrow设置宽和高和相应的background-position
+ *
+ * <div class="g-arrow"><ins class="pic"></ins></div>
+ *
+*/
+
+.g-arrow{position:relative;cursor:pointer;}
+.g-arrow .pic{
+	overflow:hidden;position:absolute;top:50%;left:50%;margin:-2px 0 0 -3px;width:7px;height:4px;cursor:pointer;
+	background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAECAMAAACwak/eAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RTE4NURCMEQ3NzQzMTFFM0IxNzRFREYwMzhCQzVBNTgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RTE4NURCMEU3NzQzMTFFM0IxNzRFREYwMzhCQzVBNTgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpFMTg1REIwQjc3NDMxMUUzQjE3NEVERjAzOEJDNUE1OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpFMTg1REIwQzc3NDMxMUUzQjE3NEVERjAzOEJDNUE1OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PptRW8UAAAAJUExURaisr3h8f////3ivjMoAAAADdFJOU///ANfKDUEAAAAmSURBVHjaYmCEACYQYABjBhCA8EE0A5SG8IEsBqhKJiaoXoAAAwAKoABPNU9aKAAAAABJRU5ErkJggg==) no-repeat;
+}
+.g-arrow-up .pic{
+	background-position:-9px 0;
+}
+.g-arrow .pic{
+	_background-image:url(http://p1.qhimg.com/t0184d678302a0984b2.png);
+}
+
+/* 三角
+ *
+ * 必须对g-sj设置定位的距离
+ * 设置三角的方向：g-sj-top(朝上) g-sj-right(朝右) g-sj-bottom(朝下) g-sj-left(朝左)
+ * <ins class="g-sj g-sj-bottom"><span class="border"></span><span class="bg"></span></ins>
+ *
+*/
+.g-sj{overflow:hidden;position:absolute;}
+.g-sj .border,
+.g-sj .bg{overflow:hidden;position:absolute;width:0;height:0;}
+.g-sj .border{z-index:1;}
+.g-sj .bg{z-index:2;}
+
+.g-sj-top .border,
+.g-sj-top .bg{left:0;border-width:0 5px 5px;border-style:dashed dashed solid;}
+.g-sj-top .border{top:0;border-color:transparent transparent #333 transparent;}
+.g-sj-top .bg{top:2px;border-color:transparent transparent #fcfcfc transparent;}
+
+.g-sj-right .border,
+.g-sj-right .bg{top:0;border-width:5px 0 5px 5px;border-style:dashed dashed dashed solid;}
+.g-sj-right .border{left:0;border-color:transparent transparent transparent #333;}
+.g-sj-right .bg{left:-2px;border-color:transparent transparent transparent #fcfcfc;}
+
+.g-sj-bottom .border,
+.g-sj-bottom .bg{left:0;border-width:5px 5px 0;border-style:solid dashed dashed;}
+.g-sj-bottom .border{top:0;border-color:#333 transparent transparent transparent;}
+.g-sj-bottom .bg{top:-2px;border-color:#fcfcfc transparent transparent transparent;}
+
+.g-sj-left .border,
+.g-sj-left .bg{top:0;border-width:5px 5px 5px 0;border-style:dashed solid dashed dashed;}
+.g-sj-left .border{left:0;border-color:transparent #333 transparent transparent;}
+.g-sj-left .bg{left:2px;border-color:transparent #fcfcfc transparent transparent;}

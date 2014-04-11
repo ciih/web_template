@@ -1,0 +1,118 @@
+/**
+*** Copyright (c) Chenhong.com All rights reserved.
+*** Chenhong's CSS reset and comm
+*** Version: 3.0.0
+*** Author ciih(司晨)
+*** Edit at 2014.3.31
+**/
+
+/* css reset
+---------------------------------------------------------*/
+
+body{font:12px/1.5 Arial,"\5b8b\4f53","Microsoft YaHei",georgia,verdana,helvetica,sans-serif;}
+body, ul, ol, dl, dd, h1, h2, h3, h4, h5, h6, pre , form, fieldset, legend, input, button, textarea, p, blockquote, th, td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;table-layout:fixed;}
+ul, ol, menu{list-style:none;}
+fieldset, img{border:none;}
+img, object, select, input, textarea, button{vertical-align:middle;}
+caption, th{text-align:left;}
+h1, h2, h3, h4, h5, h6, input, textarea, select, address, caption, cite, code, dfn, em, i, b, strong, small, th, var, abbr{font-size:100%;font-style:normal;}
+q:before, q:after{content:'';}
+ins, s, u, del{text-decoration:none;}
+
+a{text-decoration:none;cursor:pointer;}
+a:hover{text-decoration:underline;}
+
+button::-moz-focus-inner{margin:0;padding:0;border:0;}
+input::-ms-clear{display:none;} /* remove ie10 btn--X */
+
+::-webkit-input-placeholder{color:#999;}
+input:-moz-placeholder{color:#999;}
+.placeholder,
+.placeholdervalue{color:#999;} /* placeholder default color */
+
+/* css common
+---------------------------------------------------------*/
+
+/* clearfix */
+.clearfix:after, .hd:after, .bd:after, .ft:after,
+.module:after{display:block;clear:both;visibility:hidden;height:0;content:'';}
+.clearfix, .hd, .bd, .ft,
+.module{zoom:1;}
+
+/* float */
+.f-l{float:left;}
+.f-r{float:right;}
+
+/* ie fixed */
+.ie6,
+.ie6 body{
+   background-image:url("about:blank");background-attachment:fixed;
+}
+html{overflow-y:scroll;}
+
+/* website layout */
+#doc-view,
+#doc-hd,
+#doc-bd,
+#doc-ft{position:relative;}
+
+/* hack */
+.ie6 #doc-view,
+.ie6 #doc-bd{zoom:1;} /* ie6 absolute bug */
+
+/* doc-body layout */
+#doc-main,
+#doc-main-hd,
+#doc-main-bd,
+#doc-main-ft{position:relative;}
+
+/* fun */
+#doc-view{width:100%;}
+.container{margin:0 auto;}
+
+/* z-index */
+#doc-view   {z-index:1;}
+#doc-hd     {z-index:300;}
+#doc-bd     {z-index:200;}
+
+#doc-main   {z-index:100;}
+#doc-main-hd{z-index:300;}
+#doc-main-bd{z-index:200;}
+
+.front-view {z-index:1000;}
+.behind-view{z-index:10;}
+
+/* 3d view */
+.front-view,
+.behind-view{position:absolute;width:100%;height:0;top:0;left:0;}
+
+/* ie6 div default height */
+.ie6 .front-view,
+.ie6 .behind-view{font-size:0;line-height:0;}
+.ie6 .front-view *,
+.ie6 .behind-view *{font-size:12px;line-height:1.5;}
+
+/* css set
+---------------------------------------------------------*/
+
+/* background-color */
+body,
+.wrapper{background-color:#fff;}
+#doc-view{color:#333;}
+
+/* width */
+.wrapper,
+#doc-wrap,
+#doc-view{min-width:1002px;}
+.container{width:1000px;}
+
+/* link */
+a          {color:#333;}
+a:hover    {color:#e60012;}
+a:active   {color:#f60;}
+
+/* highlight (txt color) */
+.green{color:#3ba354!important;}
+.orange{color:#f60!important;}
+.blue{color:#07519a!important;}
