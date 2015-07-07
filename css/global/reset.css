@@ -49,7 +49,7 @@ input:-moz-placeholder{color:#999;}
 .ie6 body{
    background-image:url("about:blank");background-attachment:fixed;
 }
-html{overflow-y:scroll;}
+.ie6{overflow-y:scroll;}
 
 /* website layout */
 #doc-view,
